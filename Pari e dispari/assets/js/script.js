@@ -13,54 +13,43 @@ Dichiariamo chi ha vinto. */
 
  var pari_dispari = prompt('Pari o dispari');
  var num = parseInt(prompt('Inserisci un numero da 1 a 5'));
- var stringValue = pari_dispari;
+ var num_computer = Math.round(Math.random()*4+1);
 
- console.log(stringValue);
+//console.log('parametri inseriti nel programma', num, num_computer)
 
- var s = somma();
+ var s = somma(num, num_computer, pari_dispari);
 
- console.log(pari_dispari)
+ //console.log(pari_dispari)
  //console.log(num)
 
-function somma(num_utente, num_computer) {
-  var num_utente = num;
-  var num_computer=Math.round(Math.random()*4+1);
+function somma(numero_utente, numero_computer, scelta) {
+  console.log('Questo è il numero scelto dall utente: ' + numero_utente);
+  console.log('Questo è il numero del computer: ' + numero_computer );
+  console.log('Questa è la scelta dell utente: ' + scelta);
 
+  //Sommiamo i due numeri 
+   var risultato = numero_computer + numero_utente;
+
+   console.log(risultato);
+ 
+  //Controlliamo se il risultato è pari o dispari 
+
+  var risPari = risultato % 2 == 0;
+  var risDispari = risultato %2 != 0;
+  
+  //Varie opzioni
+
+  if(risPari && scelta == "pari"){
+    console.log('hai vinto');
+  }else if( risDispari && scelta == "dispari"){
+    console.log('hai vinto');
+  }else{
+    console.log('hai perso');
+  }
   
 
-  var pari = (pari_dispari % 2 === 0);
-  var dispari = (pari_dispari % 2 != 0);
-  
-  console.log("numero computer " + num_computer)
-  console.log("numero utente " + num_utente)
-
-
-  var res = num_computer + num_utente;
-
-  var sommaPari = (res % 2 === 0);
-  var sommaDispari = (res % 2 != 0 );
-
- console.log("Questa è la somma " + res)
-
-  if(stringValue === sommaPari){
-    document.getElementById("risultato").innerHTML = "Complimenti hai vinto";
-  }else if(stringValue === sommaDispari){
-    sommaDispari
-    document.getElementById("risultato").innerHTML = "Complimenti hai vinto";
-  }
-  else{
-    document.getElementById("risultato").innerHTML = "Hai perso";
-  }
-};
-/* for (var i = 0; i < n; i++){
-  a = parseInt(prompt('inserisci il primo numero'));
-  if (a % 2 == 0) {
-    sommaPari += a;
-  } else {
-    sommaDispari += a;
-  }
+  return;
 }
+  
 
-console.log(sommaPari);
-console.log(sommaDispari); */
 
