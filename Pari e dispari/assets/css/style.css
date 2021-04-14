@@ -1,0 +1,47 @@
+body{
+  background-color: lightblue;
+}
+
+div{
+  width: 70%;
+  margin: 200px auto;
+  padding: 10px;
+  background-color: lightgreen;
+  border: 3px dotted green;
+  border-radius: 20px;
+}
+
+h1{
+  color: rgb(212, 11, 11);
+  text-shadow: 1px 1px rgba(0,0,0,0.5);
+  font-size: 28px;
+  text-align:center;
+  margin: 8px auto;
+
+}
+
+h3{
+  color:#006400;
+  font-size: 20px;
+  padding-left: 22px;
+}
+
+h2{
+  color: #008080;
+  font-size: 25px;
+  padding-left: 22px;
+}
+
+span{
+  color: black;
+  font-size: 22px;
+  text-transform: uppercase;
+}
+
+#vittoria_sconfitta{
+  font-size: 40px;
+}
+
+p{
+  margin-top: 35px;
+}

@@ -15,22 +15,20 @@ Dichiariamo chi ha vinto. */
  var num = parseInt(prompt('Inserisci un numero da 1 a 5'));
  var num_computer = Math.round(Math.random()*4+1);
 
-//console.log('parametri inseriti nel programma', num, num_computer)
-
  var s = somma(num, num_computer, pari_dispari);
 
- //console.log(pari_dispari)
- //console.log(num)
 
 function somma(numero_utente, numero_computer, scelta) {
-  console.log('Questo è il numero scelto dall utente: ' + numero_utente);
-  console.log('Questo è il numero del computer: ' + numero_computer );
-  console.log('Questa è la scelta dell utente: ' + scelta);
+  document.getElementById("utente_scelta").innerHTML = scelta;
+  document.getElementById("utente_numero_scelto").innerHTML = numero_utente;
+  document.getElementById("computer_numero_generato").innerHTML = numero_computer;
+
 
   //Sommiamo i due numeri 
    var risultato = numero_computer + numero_utente;
 
-   console.log(risultato);
+   document.getElementById("somma_finale").innerHTML = risultato;
+   
  
   //Controlliamo se il risultato è pari o dispari 
 
@@ -40,16 +38,30 @@ function somma(numero_utente, numero_computer, scelta) {
   //Varie opzioni
 
   if(risPari && scelta == "pari"){
-    console.log('hai vinto');
+  document.getElementById('vittoria_sconfitta').innerHTML = "HAI VINTO!"
+  document.getElementById('vittoria_sconfitta').style.color = '#800000';
+
   }else if( risDispari && scelta == "dispari"){
-    console.log('hai vinto');
+    document.getElementById('vittoria_sconfitta').innerHTML = "HAI VINTO!"
+    document.getElementById('vittoria_sconfitta').style.color = '#800000';
+
   }else{
-    console.log('hai perso');
+    document.getElementById('vittoria_sconfitta').innerHTML = "HAI PERSO!";
+    document.getElementById('vittoria_sconfitta').style.color = '#000000';
+
   }
   
-
   return;
 }
   
+//FUNZIONE LAMPEGGIANTE
 
-
+function blink_one() {
+  document.getElementById('vittoria_sconfitta').style.visibility='visible';
+  setTimeout('blink_two()',1000);
+  }
+  function blink_two() {
+  document.getElementById('vittoria_sconfitta').style.visibility='hidden';
+  setTimeout('blink_one()',400);
+  }
+  blink_one();
